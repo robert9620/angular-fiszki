@@ -1,1 +1,395 @@
-/* You can add global styles to this file, and also import other style files */
+/* STYLE OGÓLNE ////////////////////////////////////////////////////////////////////////*/
+*{
+  --font: 'Ubuntu', sans-serif;
+  --alt-font: 'Righteous', cursive;
+
+  --font-size-big: 18px;
+  --font-size: 16px;
+  --font-size-small: 14px;
+
+  --color: #666;
+  --color-darker: #333;
+  --color-lighter: #999;
+  --alt-color: #ffbc00;
+  --alt-color-darker: #cc8911;
+  --alt-color-lighter: #ffde22;
+
+  --bg: #fff;
+  --alt-bg: #ffbc00;
+  --alt-bg-darker: #cc8911;
+  --alt-bg-lighter: #ffde22;
+
+  --radius: 16px;
+  --radius-small: 8px;
+  --duration: 0.4s;
+  --shadow: 4px 4px 4px 0px rgba(0,0,0,0.1);
+  --shadow-darker: 4px 4px 4px 0px rgba(0,0,0,0.4);
+  --shadow-inset: inset 4px 4px 4px 0px rgba(0,0,0,0.1);
+  --shadow-big: 8px 8px 4px 0px rgba(0,0,0,0.2);
+  --shadow-big-darker: 8px 8px 4px 0px rgba(0,0,0,0.4);
+
+  --menu-height: 78px;
+  --footer-height: 41px;
+  --full-page:calc(100vh - var(--menu-height) - var(--footer-height));
+
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font);
+  color: var(--color);
+  font-size: var(--font-size);
+  background-color: var(--bg);
+  margin:0 auto;
+  padding: 0px;
+  font-weight: 400;
+}
+p {
+  margin: 0px;
+  padding: 0px;
+  font-weight: 400;
+}
+a{
+  color: var(--alt-color);
+  transition-duration: var(--duration);
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  font-weight: 400;
+}
+a:hover{
+  color: var(--alt-color-darker);
+}
+input{
+  color: var(--color);
+  background-color: var(--bg);
+  padding: 4px 12px;
+  border-radius: var(--radius-small);
+  transition-duration: var(--duration);
+  font-weight: 400;
+  border:none;
+  box-shadow: var(--shadow);
+}
+input::placeholder{
+  color:var(--color-lighter);
+}
+input:focus{
+  outline: none;
+  box-shadow: var(--shadow-darker);
+}
+/*buttons*/
+button.btnOrange{
+  color: #fff;
+  background-color: var(--alt-bg);
+  padding: 4px 12px;
+  border-radius: var(--radius-small);
+  transition-duration: var(--duration);
+  font-weight: 400;
+  cursor: pointer;
+  border:none;
+  box-shadow: var(--shadow);
+  outline: none;
+}
+button.btnOrange:hover{
+  background: var(--alt-bg-darker);
+  box-shadow: var(--shadow-inset);
+  color: #fff;
+}
+button.btnOrange.active{
+  background: var(--alt-bg-darker);
+  box-shadow: var(--shadow-inset);
+  color: #fff;
+}
+button.btnWhite{
+  outline: none;
+  color: var(--color);
+  background-color: var(--bg);
+  padding: 2px 6px;
+  border-radius: var(--radius-small);
+  transition-duration: var(--duration);
+  font-weight: 400;
+  cursor: pointer;
+  border:none;
+  box-shadow: var(--shadow);
+}
+button.btnWhite:hover{
+  background: var(--alt-bg-darker);
+  box-shadow: var(--shadow-inset);
+  color: #fff;
+}
+/* headers */
+h1,h2,h3,h4,h5,h6{
+  color: var(--color);
+  font-weight: 400;
+  margin:0;
+  padding: 0;
+}
+h1{
+  font-size: 40px;
+  font-family: var(--alt-font);
+}
+h2{
+  font-size: 30px;
+  font-family: var(--alt-font);
+}
+h3{
+  font-size: 24px;
+}
+h4{
+  font-size: 22px;
+}
+h5{
+  font-size: 20px;
+}
+h6{
+  font-size: 16px;
+}
+/* elements */
+.tile{
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 30px;
+  background: var(--bg);
+}
+
+input[type="checkbox"].switch{
+  font-size: var(--font-size);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 3.5em;
+  height: 1.5em;
+  background: var(--color-lighter);
+  border-radius: var(--radius);
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  box-shadow: none;
+}
+input[type="checkbox"].switch:checked{
+  background: var(--alt-bg);
+}
+input[type="checkbox"].switch:after{
+  position: absolute;
+  content: "";
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transform: scale(.7);
+  transform: scale(.7);
+  left: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+input[type="checkbox"].switch:checked:after{
+  left: calc(100% - 1.5em);
+}
+
+/* nav */
+#menu{
+  background: var(--alt-bg);
+  box-shadow: var(--shadow);
+}
+#menu #logoContainer{
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  box-shadow: var(--shadow);
+}
+#menu #logo{
+  height: 40px;
+  width: auto;
+}
+#menu #menuItems > li{
+  background: var(--bg);
+  border-radius: var(--radius-small);
+  padding: 4px 12px;
+  margin-right: 16px;
+  transition-duration: var(--duration);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+#menu #menuItems > li > a{
+  color: var(--color);
+}
+#menu #menuItems > li.active{
+  background: var(--alt-bg-darker);
+  box-shadow: var(--shadow-inset);
+}
+#menu #menuItems > li.active > a{
+  color: #fff;
+}
+#menu #menuItems > li:hover{
+  background: var(--alt-bg-darker);
+  box-shadow: var(--shadow-inset);
+}
+#menu #menuItems > li:hover > a{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* big tile composition */
+.bigTile .bigTileConatiner{
+  min-height: var(--full-page);
+  position: relative;
+  padding: 40px 0px;
+}
+.bigTile .tile{
+  min-height: calc(100vh - var(--menu-height) - var(--footer-height) - 80px); /* 80px = container padding */
+  display: flex;
+}
+.bigTile .leftSideMenu{
+  padding-right: 30px;
+}
+.bigTile .leftSideMenu .btnOrange{
+  margin-bottom: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+}
+.bigTile .rightSideWorkspace{
+  min-height: 430px;
+  padding-left: 30px;
+  width: 100%;
+  border-left: 2px dashed var(--alt-color);
+}
+
+/* footer */
+footer{
+  background: var(--bg);
+  height: auto;
+  padding: 10px;
+  text-align: right;
+  box-shadow: var(--shadow);
+  font-size: var(--font-size-small);
+}
+
+/* MOBILE //////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Telefon */
+@media all and (max-width:767px) {
+  *{
+    --font-size-big: 16px;
+    --font-size: 14px;
+    --font-size-small: 12px;
+  }
+  /* headers */
+  h1{
+    font-size: 30px;
+  }
+  h2{
+    font-size: 24px;
+  }
+  h3{
+    font-size: 20px;
+  }
+  h4{
+    font-size: 18px;
+  }
+  h5{
+    font-size: 16px;
+  }
+  h6{
+    font-size: 14px;
+  }
+  /* nav */
+  #menu #menuItems > li, #menu #menuItems > li.active, #menu #menuItems > li:hover{
+    background: transparent;
+    box-shadow: none;
+    padding: 12px 10px;
+  }
+  #menu #menuItems > li > a, #menu #menuItems > li.active > a{
+    font-size: var(--font-size-big);
+    padding: 10px 10px;
+  }
+  .navbar-light button.navbar-toggler:focus{
+    outline: none;
+  }
+  .navbar-light button.navbar-toggler{
+    border-color:#000;
+  }
+  .navbar-light button.navbar-toggler.collapsed{
+    border-color:rgba(0,0,0,.1);
+  }
+  /* big tile composition */
+  .bigTile .tile{
+    flex-direction: column;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bigTile .rightSideWorkspace{
+    border-left: none;
+    border-bottom: 2px dashed var(--alt-color);
+    padding-left: 0px;
+    padding-bottom: 30px;
+    min-height: 0;
+  }
+  .bigTile .leftSideMenu{
+    order:2;
+    padding-right: 0;
+    padding-top: 30px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Tablet */
+@media all and (max-width:991px) and (min-width:768px){
+  *{
+    --font-size-big: 16px;
+    --font-size: 14px;
+    --font-size-small: 12px;
+  }
+  /* headers */
+  h1{
+    font-size: 36px;
+  }
+  h2{
+    font-size: 28px;
+  }
+  h3{
+    font-size: 22px;
+  }
+  h4{
+    font-size: 20px;
+  }
+  h5{
+    font-size: 18px;
+  }
+  h6{
+    font-size: 16px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Mały monitor */
+@media all and (max-width:1199px) and (min-width:992px){
+  *{
+    --font-size-big: 17px;
+    --font-size: 15px;
+    --font-size-small: 13px;
+  }
+  /* headers */
+  h1{
+    font-size: 28px;
+  }
+  h2{
+    font-size: 22px;
+  }
+  h3{
+    font-size: 19px;
+  }
+  h4{
+    font-size: 18px;
+  }
+  h5{
+    font-size: 16px;
+  }
+  h6{
+    font-size: 14px;
+  }
+}
