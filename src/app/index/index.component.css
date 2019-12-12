@@ -1,0 +1,109 @@
+/* INDEX PAGE ///////////////////////////////////////////////////////////////////////*/
+#indexPage{
+  min-height: var(--full-page);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../assets/img/bg.jpg");
+}
+#indexPage .indexPageContainer{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  min-height: var(--full-page);
+}
+#indexPage .ad{
+  box-shadow: var(--shadow-big);
+  background-color: rgba(255,188,0,0.8);
+  width: 36%;
+  text-align: center;
+  color:#fff;
+}
+#indexPage .ad h2{
+  margin-bottom: 10px;
+  color:#fff;
+}
+#indexPage .login{
+  box-shadow: var(--shadow-big);
+  background-color: rgba(255,255,255,0.8);
+  width:24%;
+  text-align: center;
+}
+#indexPage .login h5{
+  margin-bottom: 10px;
+}
+#indexPage .login p{
+  min-height:120px;
+}
+#indexPage .login button{
+  padding: 10px 20px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:14px;
+  color:#fff;
+}
+#indexPage .register{
+  box-shadow: var(--shadow-big);
+  background-color: rgba(255,255,255,0.8);
+  width:26%;
+  text-align: center;
+}
+#indexPage .register h5{
+  margin-bottom: 10px;
+}
+#indexPage .register p{
+  min-height:120px;
+}
+#indexPage .register button{
+  padding: 10px 20px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:14px;
+  color:#fff;
+}
+
+/* MOBILE //////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Telefon */
+@media all and (max-width:767px) {
+  #indexPage .indexPageContainer{
+    flex-direction: column;
+  }
+  #indexPage .ad{
+    width: 90%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  #indexPage .login{
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  #indexPage .login p{
+    min-height: 0;
+  }
+  #indexPage .register{
+    width: 90%;
+    margin-bottom: 40px;
+  }
+  #indexPage .register p{
+    min-height: 0;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Tablet */
+@media all and (max-width:991px) and (min-width:768px){
+
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Mały monitor */
+@media all and (max-width:1199px) and (min-width:992px){
+
+}

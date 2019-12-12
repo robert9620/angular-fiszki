@@ -1,0 +1,63 @@
+/* HOW PAGE ///////////////////////////////////////////////////////////////////////*/
+#howPage{
+  min-height: var(--full-page);
+  background-image: url("../../assets/img/pattern.png");
+  background-repeat: repeat;
+}
+#howPage .background{
+  position: relative;
+  width:1110px;
+  height: 570px;
+  background-image: url("../../assets/img/bg-how.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#howPage .background video{
+  width: 400px;
+  height: 320px;
+  position: absolute;
+  left: 400px;
+}
+#howPage .background video:focus{
+  outline: none;
+}
+
+/* MOBILE //////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Telefon */
+@media all and (max-width:767px) {
+  #howPage .background{
+    max-width: 100%;
+    background-image: none;
+    height: var(--full-page);
+  }
+  #howPage .background video{
+    position: static;
+    width:100%;
+    margin-top: 40px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Tablet */
+@media all and (max-width:991px) and (min-width:768px){
+  #howPage .background{
+    max-width: 100%;
+    background-image: none;
+    height: var(--full-page);
+  }
+  #howPage .background video{
+    position: static;
+    width:100%;
+    margin-top: 40px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Mały monitor */
+@media all and (max-width:1199px) and (min-width:992px){
+  #howPage .background{
+    width: 930px;
+  }
+}

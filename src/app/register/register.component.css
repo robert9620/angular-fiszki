@@ -1,0 +1,88 @@
+/* REGISTER PAGE ///////////////////////////////////////////////////////////////////////*/
+#registerPage{
+  min-height: var(--full-page);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../assets/img/bg-login.jpg");
+}
+#registerPage .registerPageContainer{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  min-height: var(--full-page);
+}
+#registerPage .registerTile{
+  box-shadow: var(--shadow-big);
+  background-color: rgba(255,188,0,0.8);
+  width: 30%;
+  text-align: center;
+  color: #fff;
+}
+#registerPage .registerTile h2{
+  margin-bottom: 20px;
+  color:#fff;
+}
+#registerPage .registerTile input{
+  width:100%;
+  margin-bottom: 10px;
+  color: var(--color);
+  background-color: var(--bg);
+  padding: 4px 12px;
+  border-radius: var(--radius-small);
+  transition-duration: var(--duration);
+  font-weight: 400;
+  border:none;
+  box-shadow: var(--shadow);
+}
+#registerPage .registerTile input::placeholder{
+  color:var(--color-lighter);
+}
+#registerPage .registerTile input:focus{
+  box-shadow: var(--shadow-darker);
+}
+#registerPage .registerTile input[type=submit]{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#registerPage .registerTile input[type=submit]:hover{
+  background: var(--alt-bg-darker);
+  box-shadow: var(--shadow-inset);
+  color: #fff;
+}
+#registerPage .registerTile .info a{
+  color:var(--color-lighter);
+}
+#registerPage .registerTile .info a:hover{
+  color: #fff;
+}
+
+/* MOBILE //////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Telefon */
+@media all and (max-width:767px) {
+  #registerPage .registerPageContainer{
+    justify-content: center;
+  }
+  #registerPage .registerTile{
+    width: 80%;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Tablet */
+@media all and (max-width:991px) and (min-width:768px){
+  #registerPage .registerTile{
+    width: 60%;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Mały monitor */
+@media all and (max-width:1199px) and (min-width:992px){
+
+}
