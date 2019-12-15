@@ -4,9 +4,9 @@
     <div class="tile loginTile">
       <h2>Logowanie:</h2>
       <form>
-        <input type="text" placeholder="Login">
-        <input type="password" placeholder="Hasło">
-        <input type="submit" value="Zaloguj się">
+        <input type="text" placeholder="Login" name="username" [(ngModel)]="username">
+        <input type="password" placeholder="Hasło" name="password" [(ngModel)]="password">
+        <input type="submit" value="Zaloguj się" (click)=checkLogin()>
       </form>
       <p class="info">Jeżeli nie masz jeszcze konta <a routerLink="/rejestracja">zarejestruj się</a>.</p>
     </div>

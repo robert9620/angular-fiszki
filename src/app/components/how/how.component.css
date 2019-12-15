@@ -1,14 +1,14 @@
 /* HOW PAGE ///////////////////////////////////////////////////////////////////////*/
 #howPage{
   min-height: var(--full-page);
-  background-image: url("../../assets/img/pattern.png");
+  background-image: url("../../../assets/img/pattern.png");
   background-repeat: repeat;
 }
 #howPage .background{
   position: relative;
   width:1110px;
   height: 570px;
-  background-image: url("../../assets/img/bg-how.jpg");
+  background-image: url("../../../assets/img/bg-how.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

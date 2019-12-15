@@ -3,7 +3,7 @@
   min-height: var(--full-page);
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../../assets/img/bg.jpg");
+  background-image: url("../../../assets/img/bg.jpg");
 }
 #indexPage .indexPageContainer{
   position: relative;

@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {IndexComponent} from './index/index.component';
-import {HowComponent} from './how/how.component';
-import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
+import {IndexComponent} from '../../components/index/index.component';
+import {HowComponent} from '../../components/how/how.component';
+import {LoginComponent} from '../../components/login/login.component';
+import {RegisterComponent} from '../../components/register/register.component';
+import {HomeComponent} from '../../components/home/home.component';
+import {AuthGuardService} from '../../services/auth-guard/auth-guard.service';
 
 
 const routes: Routes = [
@@ -27,6 +29,11 @@ const routes: Routes = [
   {
     path: 'rejestracja',
     component: RegisterComponent
+  },
+  {
+    path: 'biurko',
+    component: HomeComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: '**',

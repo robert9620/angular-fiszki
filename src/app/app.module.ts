@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { MenuComponent } from './menu/menu.component';
-import { IndexComponent } from './index/index.component';
-import { FooterComponent } from './footer/footer.component';
-import { HowComponent } from './how/how.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { AppRoutingModule } from './modules/routing/app-routing.module';
+import { MenuComponent } from './components/menu/menu.component';
+import { IndexComponent } from './components/index/index.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HowComponent } from './components/how/how.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import {FormsModule} from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { RegisterComponent } from './register/register.component';
     FooterComponent,
     HowComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [MenuComponent]

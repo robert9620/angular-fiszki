@@ -1,11 +1,11 @@
-/* REGISTER PAGE ///////////////////////////////////////////////////////////////////////*/
-#registerPage{
+/* LOGIN PAGE ///////////////////////////////////////////////////////////////////////*/
+#loginPage{
   min-height: var(--full-page);
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../../assets/img/bg-login.jpg");
+  background-image: url("../../../assets/img/bg-login.jpg");
 }
-#registerPage .registerPageContainer{
+#loginPage .loginPageContainer{
   position: relative;
   display: flex;
   flex-direction: row;
@@ -15,18 +15,18 @@
   align-content: center;
   min-height: var(--full-page);
 }
-#registerPage .registerTile{
+#loginPage .loginTile{
   box-shadow: var(--shadow-big);
   background-color: rgba(255,188,0,0.8);
   width: 30%;
   text-align: center;
-  color: #fff;
+  color:#fff;
 }
-#registerPage .registerTile h2{
+#loginPage .loginTile h2{
   margin-bottom: 20px;
   color:#fff;
 }
-#registerPage .registerTile input{
+#loginPage .loginTile input{
   width:100%;
   margin-bottom: 10px;
   color: var(--color);
@@ -38,35 +38,35 @@
   border:none;
   box-shadow: var(--shadow);
 }
-#registerPage .registerTile input::placeholder{
+#loginPage .loginTile input::placeholder{
   color:var(--color-lighter);
 }
-#registerPage .registerTile input:focus{
+#loginPage .loginTile input:focus{
   box-shadow: var(--shadow-darker);
 }
-#registerPage .registerTile input[type=submit]{
+#loginPage .loginTile input[type=submit]{
   margin-top: 20px;
   margin-bottom: 20px;
 }
-#registerPage .registerTile input[type=submit]:hover{
+#loginPage .loginTile input[type=submit]:hover{
   background: var(--alt-bg-darker);
   box-shadow: var(--shadow-inset);
   color: #fff;
 }
-#registerPage .registerTile .info a{
+#loginPage .loginTile .info a{
   color:var(--color-lighter);
 }
-#registerPage .registerTile .info a:hover{
+#loginPage .loginTile .info a:hover{
   color: #fff;
 }
 
 /* MOBILE //////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Telefon */
 @media all and (max-width:767px) {
-  #registerPage .registerPageContainer{
+  #loginPage .loginPageContainer{
     justify-content: center;
   }
-  #registerPage .registerTile{
+  #loginPage .loginTile{
     width: 80%;
   }
 }
@@ -75,7 +75,7 @@
 
 /* Tablet */
 @media all and (max-width:991px) and (min-width:768px){
-  #registerPage .registerTile{
+  #loginPage .loginTile{
     width: 60%;
   }
 }
