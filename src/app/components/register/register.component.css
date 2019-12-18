@@ -35,7 +35,7 @@
   border-radius: var(--radius-small);
   transition-duration: var(--duration);
   font-weight: 400;
-  border:none;
+  border:2px solid transparent;
   box-shadow: var(--shadow);
 }
 #registerPage .registerTile input::placeholder{
@@ -48,10 +48,31 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+#registerPage .registerTile input[type=submit]:disabled{
+  background: #ddd;
+}
 #registerPage .registerTile input[type=submit]:hover{
   background: var(--alt-bg-darker);
   box-shadow: var(--shadow-inset);
   color: #fff;
+}
+#registerPage .registerTile input[type=submit]:disabled:hover{
+  background: #ddd;
+  box-shadow: var(--shadow);
+  color: var(--color);
+  cursor: no-drop;
+}
+#registerPage .registerTile input.borderRed{
+  border: 2px solid red;
+}
+#registerPage .registerTile input.borderGreen{
+  border: 2px solid green;
+}
+#registerPage .registerTile .infoGreen{
+  color: green;
+}
+#registerPage .registerTile .infoRed{
+   color: red;
 }
 #registerPage .registerTile .info a{
   color:var(--color-lighter);

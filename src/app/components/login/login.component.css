@@ -35,7 +35,7 @@
   border-radius: var(--radius-small);
   transition-duration: var(--duration);
   font-weight: 400;
-  border:none;
+  border:2px solid transparent;
   box-shadow: var(--shadow);
 }
 #loginPage .loginTile input::placeholder{
@@ -48,10 +48,31 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+#loginPage .loginTile input[type=submit]:disabled{
+  background: #ddd;
+}
 #loginPage .loginTile input[type=submit]:hover{
   background: var(--alt-bg-darker);
   box-shadow: var(--shadow-inset);
   color: #fff;
+}
+#loginPage .loginTile input[type=submit]:disabled:hover{
+  background: #ddd;
+  box-shadow: var(--shadow);
+  color: var(--color);
+  cursor: no-drop;
+}
+#loginPage .loginTile input.borderRed{
+  border: 2px solid red;
+}
+#loginPage .loginTile input.borderGreen{
+  border: 2px solid green;
+}
+#loginPage .loginTile .infoGreen{
+  color: green;
+}
+#loginPage .loginTile .infoRed{
+  color: red;
 }
 #loginPage .loginTile .info a{
   color:var(--color-lighter);

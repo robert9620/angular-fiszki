@@ -3,14 +3,31 @@
   <div class="container registerPageContainer">
     <div class="tile registerTile">
       <h2>Rejestracja:</h2>
-      <form>
-        <input type="text" placeholder="Imię">
-        <input type="text" placeholder="Nazwisko">
-        <input type="text" placeholder="Login">
-        <input type="password" placeholder="Hasło">
-        <input type="password" placeholder="Powtórz hasło">
-        <input type="submit" value="Zarejestruj się">
+      <form (ngSubmit)="registerFunction(formInfo)" #formInfo="ngForm">
+        <input
+          [class.borderRed]="!name.valid && name.dirty"
+          [class.borderGreen]="name.valid && name.dirty"
+          type="text" placeholder="Imię" name="name" #name="ngModel" required [(ngModel)]="formDataClass.name">
+        <input
+          [class.borderRed]="!surname.valid && surname.dirty"
+          [class.borderGreen]="surname.valid && surname.dirty"
+          type="text" placeholder="Nazwisko" name="surname" #surname="ngModel" required [(ngModel)]="formDataClass.surname">
+        <input
+          [class.borderRed]="!login.valid && login.dirty"
+          [class.borderGreen]="login.valid && login.dirty"
+          type="text" placeholder="Login" name="login" #login="ngModel" required [(ngModel)]="formDataClass.login">
+        <input
+          [class.borderRed]="!password.valid && password.dirty"
+          [class.borderGreen]="password.valid && password.dirty"
+          type="password" placeholder="Hasło" name="password" #password="ngModel" required [(ngModel)]="formDataClass.password">
+        <input
+          [class.borderRed]="!passwordRepeat.valid && passwordRepeat.dirty"
+          [class.borderGreen]="passwordRepeat.valid && passwordRepeat.dirty"
+          type="password" placeholder="Powtórz hasło" name="passwordRepeat" #passwordRepeat="ngModel" required [(ngModel)]="formDataClass.passwordRepeat">
+        <input type="submit" value="Zarejestruj się" [disabled]="!formInfo.valid">
       </form>
+      <p class="infoGreen">{{successMessage}}</p>
+      <p class="infoRed">{{errorMessage}}</p>
       <p class="info">Jeżeli masz już konto<br> możesz przejść do <a routerLink="/logowanie">logowania</a>.</p>
     </div>
   </div>

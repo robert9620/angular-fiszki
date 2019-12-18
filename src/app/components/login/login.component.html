@@ -3,11 +3,18 @@
   <div class="container loginPageContainer">
     <div class="tile loginTile">
       <h2>Logowanie:</h2>
-      <form>
-        <input type="text" placeholder="Login" name="username" [(ngModel)]="username">
-        <input type="password" placeholder="Hasło" name="password" [(ngModel)]="password">
-        <input type="submit" value="Zaloguj się" (click)=checkLogin()>
+      <form (ngSubmit)="loginFunction(formInfo)" #formInfo="ngForm">
+        <input
+          [class.borderRed]="!login.valid && login.dirty"
+          [class.borderGreen]="login.valid && login.dirty"
+          type="text" placeholder="Login" name="login" #login="ngModel" required [(ngModel)]="formDataClass.login">
+        <input
+          [class.borderRed]="!password.valid && password.dirty"
+          [class.borderGreen]="password.valid && password.dirty"
+          type="password" placeholder="Hasło" name="password" #password="ngModel" required [(ngModel)]="formDataClass.password">
+        <input type="submit" value="Zaloguj się" [disabled]="!formInfo.valid">
       </form>
+      <p class="infoRed">{{errorMessage}}</p>
       <p class="info">Jeżeli nie masz jeszcze konta <a routerLink="/rejestracja">zarejestruj się</a>.</p>
     </div>
   </div>
