@@ -12,6 +12,8 @@ import {FormsModule} from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import {HttpService} from './services/http/http.service';
 import {HttpClientModule} from '@angular/common/http';
+import {AuthInterceptor} from './services/auth-guard/auth.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,13 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [HttpService],
+  providers: [HttpService,
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthInterceptor,
+        multi: true,
+      }
+    ],
   bootstrap: [MenuComponent]
 })
 export class AppModule { }

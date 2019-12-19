@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {AuthService} from '../../services/auth/auth.service';
-import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -22,9 +21,8 @@ export class LoginComponent implements OnInit {
   loginFunction(formData) {
     this.authService.login(this.formDataClass.login, this.formDataClass.password).subscribe(
       (response) => {
-        console.log(JSON.stringify(response));
         sessionStorage.setItem('username', this.formDataClass.login);
-        sessionStorage.setItem('token', response.token);
+        sessionStorage.setItem('token', 'Token '+response["token"]);
         this.router.navigate(['/biurko']);
       },
       (error) => {
