@@ -1,45 +1,17 @@
 export class UserDTO {
-  private username: string;
-  private surname: string;
-  private name: string;
-  private password: string;
+  username: string;
+  surname: string;
+  name: string;
+  password: string;
+  points: number;
+  mistakes: number;
 
-  constructor(username: string, password: string, name?: string, surname?: string) {
+  constructor(username: string, password: string, name?: string, surname?: string, points?: number, mistakes?: number) {
     this.name = name;
     this.surname = surname;
     this.username = username;
     this.password = password;
-  }
-
-  getName(): string {
-    return this.username;
-  }
-
-  setName(value: string) {
-    this.username = value;
-  }
-
-  getSurname(): string {
-    return this.surname;
-  }
-
-  setSurname(value: string) {
-    this.surname = value;
-  }
-
-  getLogin(): string {
-    return this.name;
-  }
-
-  setLogin(value: string) {
-    this.name = value;
-  }
-
-  getPassword(): string {
-    return this.password;
-  }
-
-  setPassword(value: string) {
-    this.password = value;
+    this.points = points;
+    this.mistakes = mistakes;
   }
 }

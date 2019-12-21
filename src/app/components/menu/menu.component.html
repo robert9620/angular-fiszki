@@ -1,31 +1,6 @@
-<!-- MENU -->
-<nav class="navbar navbar-expand-md navbar-light" id="menu">
-  <a class="navbar-brand" routerLink="/strona-glowna">
-    <div id="logoContainer">
-      <img src="../../../assets/img/logo.png" alt="logo witryny" id="logo">
-    </div>
-  </a>
-  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<app-menu-not-logged-in *ngIf="!authService.isUserLoggedIn()"></app-menu-not-logged-in>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto" id="menuItems">
-      <li routerLinkActive="active">
-        <a routerLink="/strona-glowna">Strona główna</a>
-      </li>
-      <li routerLinkActive="active">
-        <a routerLink="/jak-to-dziala">Jak to działa?</a>
-      </li>
-      <li routerLinkActive="active">
-        <a routerLink="/logowanie">Logowanie</a>
-      </li>
-      <li routerLinkActive="active">
-        <a routerLink="/rejestracja">Rejestracja</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<app-menu-logged-in *ngIf="authService.isUserLoggedIn()"></app-menu-logged-in>
 
 <router-outlet></router-outlet>
 

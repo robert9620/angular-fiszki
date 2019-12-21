@@ -1,0 +1,49 @@
+<!-- MAIN -->
+<main id="letsLearn">
+  <div class="container letsLearnContainer">
+    <div class="row">
+      <div class="col-12">
+        <div class="tile chooseSetTile">
+          <owl-carousel-o [options]="owlCarouselOptions" #owlCarousel>
+            <ng-container *ngFor="let slide of slidesStore">
+              <ng-template carouselSlide>
+                <div (click)="setActiveSet(slideName.innerText)" class="setTile">
+                  <h2 #slideName>{{slide.name}}</h2>
+                  <h5>Słówek: {{slide.amount}}</h5>
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+          <div class="owl-nav">
+            <i class="fas fa-arrow-alt-circle-left owl-prev" (click)="owlCarousel.prev()"></i>
+            <i class="fas fa-arrow-alt-circle-right owl-next" (click)="owlCarousel.next()"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-3">
+        <a href="#">
+          <div class="tile continueTile">
+            <h3>Ucz się zestawu:</h3>
+            <h2 class="setTitle">"<span id="chosenSet">{{activeSet}}</span>"</h2>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6">
+        <div class="tile options">
+          <div class="firstOption">
+            <input type="checkbox" class="switch">
+            Obrócona kolejność<br> (język obcy - język polski)
+          </div>
+          <div class="secondOption">
+            <input type="checkbox" class="switch">
+            Licznik punktów
+          </div>
+          <div class="thirdOption">
+            <input type="checkbox" class="switch">
+            Stylizowana czcionka
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

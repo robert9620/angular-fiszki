@@ -14,6 +14,13 @@ import {HttpService} from './services/http/http.service';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './services/auth-guard/auth.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MenuLoggedInComponent } from './components/menu/menu-logged-in/menu-logged-in.component';
+import { MenuNotLoggedInComponent } from './components/menu/menu-not-logged-in/menu-not-logged-in.component';
+import { LetsLearnComponent } from './components/lets-learn/lets-learn.component';
+import { SetsComponent } from './components/sets/sets.component';
+import { AccountComponent } from './components/account/account.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CarouselModule} from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -23,13 +30,20 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     HowComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    MenuLoggedInComponent,
+    MenuNotLoggedInComponent,
+    LetsLearnComponent,
+    SetsComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    CarouselModule,
   ],
   providers: [HttpService,
       {

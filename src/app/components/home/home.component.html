@@ -1,1 +1,73 @@
-<p>home works!</p>
+<!-- MAIN -->
+<main id="homePage">
+  <div class="container homePageContainer">
+    <div class="row">
+      <div class="col-lg-6 order-lg-1">
+        <div class="tile statistic">
+          <table class="statisticTable">
+            <tr>
+              <td class="statisticTableLeftTop">
+                <h3>Punkty:</h3>
+                <span class="points">{{points}}</span>
+              </td>
+              <td class="statisticTableRightTop">
+                <h3>Pomyłki:</h3>
+                <span class="mistakes">{{mistakes}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="statisticTableLeftBottom">
+                <h5>Utworzone zestawy</h5>
+                <span class="sets">0</span>
+              </td>
+              <td class="statisticTableRightBottom">
+                <h5>Dodane słówka</h5>
+                <span class="words">0</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-2">
+        <div class="row">
+          <div class="col-md-12 order-lg-3">
+            <a routerLink="/nauka">
+              <div class="tile learn">
+                <div class="leftSide">
+                  <h2>Pouczymy się?</h2>
+                  <p>Systematyczna nauka jest najskuteczniejsza. Poświęć parę minut dziennie, ale bądź regularny. Efekty będą lepsze niż się spodziewasz.</p>
+                  <p class="letsStart">Zaczynajmy!</p>
+                </div>
+                <div class="rightSide">
+                  <img src="../../../assets/img/learn.jpg" alt="learning" class="learnImg">
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 order-lg-1">
+            <a routerLink="/zestawy">
+              <div class="tile sets">
+                <h3>Zestawy</h3>
+                <p>Zarządzaj zestawami słówek.</p>
+                <div class="iconHolder">
+                  <i class="fas fa-archive"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 order-lg-2">
+            <a routerLink="/moje-konto">
+              <div class="tile account">
+                <h3>Moje konto</h3>
+                <p>Przejdź do ustawień konta.</p>
+                <div class="iconHolder">
+                  <i class="fas fa-user"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {UserDTO} from '../../models/UserDTO';
 import {Observable} from 'rxjs';
+import {User} from 'firebase';
+import {SetDTO} from '../../models/SetDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +23,23 @@ export class HttpService {
 
   registerUser(user: UserDTO): Observable<UserDTO> {
     return this.http.post<UserDTO>(this.serverAddress + '/auth/register', user);
+  }
+
+  getUserInfo(): Observable<UserDTO> {
+    let userName = sessionStorage.getItem('username');
+    let param = new HttpParams().set("username",userName);
+    return this.http.get<UserDTO>(this.serverAddress + '/api/userInfo', {params: param});
+  }
+
+  getUserSets(): Observable<SetDTO> {
+    let userName = sessionStorage.getItem('username');
+    let param = new HttpParams().set("username",userName);
+    return this.http.get<SetDTO>(this.serverAddress + '/api/userSets', {params: param});
+  }
+
+  deleteSet(id) {
+    let param = new HttpParams().set("setId",id);
+    return this.http.delete(this.serverAddress + '/api/deleteUserSet', {params: param});
   }
 
   checkLogin(): Observable<string> {

@@ -1,0 +1,163 @@
+/* LETS LEARN ///////////////////////////////////////////////////////////////////////*/
+#letsLearn{
+  min-height: var(--full-page);
+  background-repeat: repeat;
+  background-image: url("../../../assets/img/pattern.png");
+  font-size: var(--font-size-small);
+}
+#letsLearn .letsLearnContainer{
+  position: relative;
+  padding: 40px 0px;
+}
+#letsLearn .letsLearnContainer a:hover{
+  text-decoration: none;
+}
+/* choose set */
+#letsLearn .chooseSetTile{
+  height: calc((100vh - var(--menu-height) - var(--footer-height) - 100px) / 3 * 2); /* 100px = container padding */
+  min-height: 313.33px;
+  margin-bottom: 20px;
+  transition-duration: var(--duration);
+  text-align: center;
+}
+#letsLearn .setTile{
+  border:1px solid var(--alt-color);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow);
+  padding: 40px;
+  margin-bottom: 15px;
+  margin-right: 20px;
+  margin-left: 20px;
+  width: auto;
+  transition-duration: var(--duration);
+  text-align: center;
+}
+#letsLearn .setTile:hover{
+  box-shadow: var(--shadow-darker);
+  cursor: pointer;
+}
+#letsLearn .setTile h2{
+  margin-bottom: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#letsLearn .chooseSetTile .owl-nav{
+  margin-top: 30px;
+}
+#letsLearn .chooseSetTile .owl-nav i{
+  font-size: 36px;
+  color:var(--alt-color);
+  cursor: pointer;
+  transition-duration: var(--duration);
+}
+#letsLearn .chooseSetTile .owl-nav i:hover{
+  color:var(--alt-color-darker);
+}
+#letsLearn .chooseSetTile .owl-nav i:first-child{
+  margin-right: 20px;
+}
+/* options */
+#letsLearn .options{
+  height: calc((100vh - var(--menu-height) - var(--footer-height) - 100px) / 3); /* 100px = container padding */
+  min-height: 156.66px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+#letsLearn .options div{
+  width:auto;
+  text-align: center;
+  border-right: 2px dashed var(--alt-color);
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+#letsLearn .options div .switch{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+#letsLearn .options div.firstOption{
+  padding-right: 20px;
+}
+#letsLearn .options div.secondOption{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#letsLearn .options div.thirdOption{
+  padding-left: 20px;
+  border: none;
+}
+/* continue */
+#letsLearn .continueTile{
+  height: calc((100vh - var(--menu-height) - var(--footer-height) - 100px) / 3); /* 100px = container padding */
+  min-height: 156.66px;
+  transition-duration: var(--duration);
+  text-align: center;
+  background: var(--alt-bg);
+  color: #fff;
+}
+#letsLearn .continueTile:hover{
+  box-shadow: var(--shadow-darker);
+}
+#letsLearn .continueTile .setTitle{
+  margin-top: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#letsLearn .continueTile h2, #letsLearn .continueTile h3{
+  color: #fff;
+}
+
+/* MOBILE //////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Telefon */
+@media all and (max-width:767px) {
+  #letsLearn .chooseSetTile{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #letsLearn .continueTile{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  #letsLearn .options{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Tablet */
+@media all and (max-width:991px) and (min-width:768px){
+  #letsLearn .options div.firstOption {
+    padding-right: 10px;
+  }
+  #letsLearn .options div.secondOption {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #letsLearn .options div.thirdOption {
+    padding-left: 20px;
+  }
+  #letsLearn .options div{
+    padding-top: 6px;
+  }
+  #letsLearn .setTile{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Mały monitor */
+@media all and (max-width:1199px) and (min-width:992px){
+
+}
