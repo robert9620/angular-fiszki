@@ -1,17 +1,11 @@
-/* SETS PAGE */
-#setsPage{
-  background-repeat: repeat;
-  background-image: url("../../../assets/img/pattern.png");
-  font-size: var(--font-size-small);
-}
-#setsPage .rightSideWorkspace{
+#allSets{
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   align-content: flex-start;
 }
-#setsPage .rightSideWorkspace .setTile{
+.setTile{
   border:1px solid var(--alt-color);
   margin-right: 15px;
   height: auto;
@@ -22,48 +16,48 @@
   justify-content: space-between;
   margin-bottom: 15px;
   text-align: left;
-  width: 23%;
   transition-duration: var(--duration);
+  width: 23%;
 }
-#setsPage .rightSideWorkspace .setTile:hover{
+.setTile:hover{
   box-shadow: var(--shadow-darker);
   cursor: pointer;
 }
-#setsPage .rightSideWorkspace .setTile h5{
+.setTile h5{
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#setsPage .rightSideWorkspace .setIcons{
+.setIcons{
   margin-left: 20px;
   text-align: center;
 }
-#setsPage .rightSideWorkspace .setIcons i{
+.setIcons i{
   transition-duration: var(--duration);
   margin-bottom: 4px;
 }
-#setsPage .rightSideWorkspace .setIcons i:hover{
+.setIcons i:hover{
   color: var(--alt-color);
 }
 
 /* MOBILE //////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Telefon */
 @media all and (max-width:767px) {
-  #setsPage .rightSideWorkspace .setTile{
+  .setTile{
     width: 100%;
     flex-wrap: wrap;
     margin-right: 0px;
   }
-  #setsPage .rightSideWorkspace .setIcons{
+  .setIcons{
     display: flex;
     align-items: baseline;
     width: 100%;
     margin-left: 0;
   }
-  #setsPage .rightSideWorkspace .setTile h5{
+  .setTile h5{
     margin-top: 6px;
     margin-bottom: 6px;
   }
-  #setsPage .rightSideWorkspace .setIcons i{
+  .setIcons i{
     margin-right: 16px;
     margin-top: 10px;
     font-size: 18px;
@@ -74,11 +68,11 @@
 
 /* Tablet */
 @media all and (max-width:991px) and (min-width:768px){
-  #setsPage .rightSideWorkspace .setTile{
+  .setTile{
     width: 30%;
     padding: 6px 10px 6px 16px;
   }
-  #setsPage .rightSideWorkspace .setIcons i{
+  .setIcons i{
     font-size: 14px;
     margin-bottom: 8px;
   }
@@ -88,7 +82,7 @@
 
 /* Mały monitor */
 @media all and (max-width:1199px) and (min-width:992px){
-  #setsPage .rightSideWorkspace .setTile{
+  .setTile{
     width: 22%;
     margin-right: 20px;
   }

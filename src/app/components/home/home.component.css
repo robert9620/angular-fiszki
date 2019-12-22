@@ -45,7 +45,7 @@
   width:50%;
   border-right: 2px dashed var(--alt-color);
 }
-#homePage .statisticTable .sets{
+#homePage .statisticTable .setsAmount{
   font-size: 64px;
   font-family: var(--alt-font);
 }
