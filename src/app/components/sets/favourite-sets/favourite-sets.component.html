@@ -1,0 +1,16 @@
+<div id="allSets">
+  <ng-container *ngFor="let set of sets">
+    <div #oneSet class="setTile" id="{{set.id}}">
+      <div class="setTitle">
+        <h5>{{set.name}}</h5>
+        <p>Słówek: {{set.wordsAmount}}</p>
+      </div>
+      <div class="setIcons">
+        <i class="fas fa-graduation-cap" title="Ucz się"></i><br>
+        <i class="fas fa-heart" title="Usuń z ulubionych" (click)="deleteSetFromFavourite(oneSet.id)"></i><br>
+        <i class="fas fa-pencil-alt" title="Edytuj"></i><br>
+        <i class="fas fa-trash-alt" title="Usuń" (click)="deleteSet(oneSet.id)"></i>
+      </div>
+    </div>
+  </ng-container>
+</div>

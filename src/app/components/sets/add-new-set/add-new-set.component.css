@@ -1,0 +1,89 @@
+input{
+  width: 100%;
+  border: 1px solid var(--alt-color);
+}
+#addSetInput{
+  margin-bottom: 20px;
+}
+#addWordsTable{
+  width: 100%;
+  margin-bottom: 30px;
+}
+#addWordsTable td.number{
+  padding: 10px 0px 0px 0px;
+  width: 24px;
+}
+#addWordsTable td .numberCircle{
+  border-radius: var(--radius-small);
+  background: var(--alt-bg);
+  text-align: center;
+  width:24px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+#addWordsTable td.word{
+  padding: 10px 0px 0px 20px;
+}
+#addWordsTable td.definition{
+  padding: 10px 0px 0px 20px;
+}
+#addWordsTable td.deleteRow{
+  width: 24px;
+  text-align: center;
+  line-height: 24px;
+  padding: 10px 0px 0px 10px;
+}
+#addWordsTable td.deleteRow i{
+  transition-duration: var(--duration);
+  margin-top: 0px;
+  padding: 10px;
+  cursor: pointer;
+}
+#addWordsTable td.deleteRow i:hover{
+  color:var(--alt-color);
+}
+.buttons{
+  width: 100%;
+  text-align: center;
+}
+#addAnotherWord{
+  font-size: 24px;
+  margin-right: 20px;
+}
+#saveSet{
+  font-size: 24px;
+}
+
+/* MOBILE //////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Telefon */
+@media all and (max-width:767px) {
+  #addWordsTable td.word {
+    padding: 10px 0px 0px 10px;
+  }
+  #addWordsTable td.definition {
+    padding: 10px 0px 0px 10px;
+  }
+  #addWordsTable td.number {
+    padding: 10px 0px 0px 0px;
+  }
+  #addWordsTable td.deleteRow {
+    padding: 10px 0px 0px 10px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Tablet */
+@media all and (max-width:991px) and (min-width:768px) {
+  .setTile {
+
+  }
+}
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Mały monitor */
+@media all and (max-width:1199px) and (min-width:992px){
+
+}

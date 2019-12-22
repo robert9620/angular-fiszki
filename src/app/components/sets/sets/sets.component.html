@@ -1,0 +1,25 @@
+<div id="allSets">
+  <ng-container *ngFor="let set of sets">
+    <div #oneSet class="setTile" id="{{set.id}}">
+      <div class="setTitle">
+        <h5>{{set.name}}</h5>
+        <p>Słówek: {{set.wordsAmount}}</p>
+      </div>
+      <div class="setIcons">
+        <i class="fas fa-graduation-cap" title="Ucz się"></i><br>
+
+        <ng-container [ngTemplateOutlet]='set.favourite ? favourite : notFavourite'></ng-container>
+        <ng-template #favourite>
+          <i class="fas fa-heart" title="Usuń z ulubionych" (click)="deleteSetFromFavourite(oneSet.id)"></i>
+        </ng-template>
+        <ng-template #notFavourite>
+          <i class="far fa-heart" title="Dodaj do ulubionych" (click)="addSetToFavourite(oneSet.id)"></i>
+        </ng-template>
+        <br>
+
+        <i class="fas fa-pencil-alt" title="Edytuj" (click)="editSet(oneSet.id, set.name)"></i><br>
+        <i class="fas fa-trash-alt" title="Usuń" (click)="deleteSet(oneSet.id)"></i>
+      </div>
+    </div>
+  </ng-container>
+</div>

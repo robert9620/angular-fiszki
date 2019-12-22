@@ -1,0 +1,16 @@
+/* SETS PAGE */
+#setsPage{
+  background-repeat: repeat;
+  background-image: url("../../../assets/img/pattern.png");
+  font-size: var(--font-size-small);
+}
+#setsPage .rightSideWorkspace{
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  /*justify-content: flex-start;*/
+  /*align-items: center;*/
+  /*align-content: flex-start;*/
+}
+app-add-new-set{
+  width: 100%;
+}

@@ -1,0 +1,16 @@
+<!-- MAIN -->
+<main id="setsPage" class="bigTile">
+  <div class="container bigTileConatiner">
+    <div class="tile">
+      <div class="leftSideMenu">
+        <button class="btnOrange" [routerLink]="['ulubione']" routerLinkActive="active">Ulubione</button>
+        <button class="btnOrange" [routerLink]="['moje-zestawy']" routerLinkActive="active">Moje zestawy</button>
+        <button class="btnOrange" [routerLink]="['dodawanie']" routerLinkActive="active">Dodaj zestaw</button>
+        <button class="btnOrange" [routerLink]="['wyszukiwanie']" routerLinkActive="active">Wyszukaj zestaw</button>
+      </div>
+      <div class="rightSideWorkspace">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</main>

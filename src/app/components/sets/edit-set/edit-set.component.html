@@ -1,0 +1,27 @@
+<input type="text" placeholder="Nazwa zestawu" id="addSetInput" [(ngModel)]="setName">
+<table id="addWordsTable">
+  <ng-container *ngFor="let word of words; let i = index;">
+    <tr>
+      <td #oneWord class="number" id="{{i}}">
+        <div class="numberCircle">{{i+1}}</div>
+      </td>
+      <td class="word">
+        <input type="text" name="nameWord" placeholder="Słówko" [(ngModel)]="words[i].word">
+      </td>
+      <td class="definition">
+        <input type="text" placeholder="Definicja" [(ngModel)]="words[i].definition">
+      </td>
+      <td class="deleteRow" data-id="{{i}}">
+        <i class="fas fa-trash-alt" title="Usuń" (click)="deleteWord(oneWord.id)"></i>
+      </td>
+    </tr>
+  </ng-container>
+</table>
+<div class="buttons">
+  <button class="btnOrange" id="addAnotherWord" (click)="addWord()">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="btnOrange" id="saveSet" (click)="save()">
+    <i class="fas fa-save"></i>
+  </button>
+</div>
