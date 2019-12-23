@@ -1,0 +1,15 @@
+<!-- MAIN -->
+<main id="account" class="bigTile">
+  <div class="container bigTileConatiner">
+    <div class="tile">
+      <div class="leftSideMenu">
+        <button class="btnOrange" [routerLink]="['moje-dane']" routerLinkActive="active">Moje dane</button>
+        <button class="btnOrange" [routerLink]="['zmien-haslo']" routerLinkActive="active">Zmień hasło</button>
+        <button class="btnOrange" (click)="logOut()">Wyloguj</button>
+      </div>
+      <div class="rightSideWorkspace">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</main>

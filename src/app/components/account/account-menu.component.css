@@ -1,0 +1,10 @@
+/* ACCOUNT */
+#account{
+  background-repeat: repeat;
+  background-image: url("../../../assets/img/pattern.png");
+  font-size: var(--font-size-small);
+}
+#account .rightSideWorkspace{
+  text-align: center;
+}
+
