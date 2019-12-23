@@ -1,0 +1,14 @@
+<div class="login">
+  <h2>Login:</h2>
+  <h5>{{userName}}</h5>
+</div>
+<h3>Imię:</h3>
+<input type="text" placeholder="{{name}}" id="name" #nameInput>
+<h3>Nazwisko:</h3>
+<input type="text" placeholder="{{surname}}" id="surname" #surnameInput>
+<button class="btnOrange" id="save" (click)="saveChanges(nameInput.value, surnameInput.value)">
+  <i class="fas fa-save"></i>
+</button>
+<br>
+<p class="messageGreen">{{message}}</p>
+<p class="messageRed">{{messageError}}</p>

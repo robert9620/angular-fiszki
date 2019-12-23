@@ -1,1 +1,15 @@
-<p>find-set works!</p>
+<div id="allSets">
+  <ng-container *ngFor="let defaultSet of defaultSets">
+    <div #setTile class="setTile" id="{{defaultSet.id}}">
+      <div class="setTitle">
+        <h5>{{defaultSet.name}}</h5>
+        <div class="setInformations">
+          <p>Słówek: {{defaultSet.wordsAmount}}</p>
+        </div>
+      </div>
+      <div class="setIcons">
+        <i class="fas fa-plus" title="Dodaj zestaw" #plusIcon (click)="addToSets(defaultSet.id, plusIcon, setTile)"></i>
+      </div>
+    </div>
+  </ng-container>
+</div>

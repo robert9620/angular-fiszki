@@ -18,7 +18,7 @@ import { MenuLoggedInComponent } from './components/menu/menu-logged-in/menu-log
 import { MenuNotLoggedInComponent } from './components/menu/menu-not-logged-in/menu-not-logged-in.component';
 import { LetsLearnComponent } from './components/lets-learn/lets-learn.component';
 import { SetsComponent } from './components/sets/sets/sets.component';
-import { AccountComponent } from './components/account/account.component';
+import { AccountComponent } from './components/account/account/account.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import { FavouriteSetsComponent } from './components/sets/favourite-sets/favourite-sets.component';
@@ -26,6 +26,8 @@ import { AddNewSetComponent } from './components/sets/add-new-set/add-new-set.co
 import { FindSetComponent } from './components/sets/find-set/find-set.component';
 import { EditSetComponent } from './components/sets/edit-set/edit-set.component';
 import { SetsMenuComponent } from './components/sets/sets-menu.component';
+import { AccountMenuComponent } from './components/account/account-menu.component';
+import { ChangePasswordComponent } from './components/account/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { SetsMenuComponent } from './components/sets/sets-menu.component';
     AddNewSetComponent,
     FindSetComponent,
     EditSetComponent,
-    SetsMenuComponent
+    SetsMenuComponent,
+    AccountMenuComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

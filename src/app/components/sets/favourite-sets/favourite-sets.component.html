@@ -8,7 +8,7 @@
       <div class="setIcons">
         <i class="fas fa-graduation-cap" title="Ucz się"></i><br>
         <i class="fas fa-heart" title="Usuń z ulubionych" (click)="deleteSetFromFavourite(oneSet.id)"></i><br>
-        <i class="fas fa-pencil-alt" title="Edytuj"></i><br>
+        <i class="fas fa-pencil-alt" title="Edytuj" (click)="editSet(oneSet.id, set.name, true)"></i><br>
         <i class="fas fa-trash-alt" title="Usuń" (click)="deleteSet(oneSet.id)"></i>
       </div>
     </div>

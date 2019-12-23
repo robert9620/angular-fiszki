@@ -22,14 +22,16 @@ export class SetsComponent implements OnInit {
     this.httpService.getUserSets().subscribe(
       (response) => {
         this.sets = response;
+        this.sets.sort();
       }
     )
   }
 
-  private editSet(setId, setName) {
+  private editSet(setId, setName, isFavourite) {
     sessionStorage.setItem('currentEditingSetId', setId);
     sessionStorage.setItem('currentEditingSetName', setName);
-    this.router.navigate(['/zestawy/edycja']);
+    sessionStorage.setItem('currentEditingSetIsFavourite', isFavourite);
+    this.router.navigate(['/zestawy/moje-zestawy/edycja']);
   }
 
   private deleteSet(setId) {

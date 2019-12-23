@@ -137,6 +137,9 @@
   padding: 20px;
   width:50%;
 }
+#homePage .learn .leftSide p{
+  text-align: left;
+}
 #homePage .learn .rightSide{
   width:50%;
   max-height: 100%;

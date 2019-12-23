@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from '../../../services/http/http.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-favourite-sets',
@@ -10,7 +11,8 @@ export class FavouriteSetsComponent implements OnInit {
 
   private sets;
 
-  constructor(private httpService: HttpService) { }
+  constructor(private router: Router,
+              private httpService: HttpService) { }
 
   ngOnInit() {
     this.getUserFavouriteSets();
@@ -20,8 +22,16 @@ export class FavouriteSetsComponent implements OnInit {
     this.httpService.getUserFavouriteSets().subscribe(
       (response) => {
         this.sets = response;
+        this.sets.sort();
       }
     )
+  }
+
+  private editSet(setId, setName, isFavourite) {
+    sessionStorage.setItem('currentEditingSetId', setId);
+    sessionStorage.setItem('currentEditingSetName', setName);
+    sessionStorage.setItem('currentEditingSetIsFavourite', isFavourite);
+    this.router.navigate(['/zestawy/moje-zestawy/edycja']);
   }
 
   private deleteSet(setId){

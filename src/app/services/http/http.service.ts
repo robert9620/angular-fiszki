@@ -4,6 +4,8 @@ import {UserDTO} from '../../models/UserDTO';
 import {Observable} from 'rxjs';
 import {SetDTO} from '../../models/SetDTO';
 import {Word} from '../../models/Word';
+import {DefaultSetDTO} from '../../models/DefaultSetDTO';
+import {DefaultWordDTO} from '../../models/DefaultWordDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -31,10 +33,16 @@ export class HttpService {
     return this.http.get<UserDTO>(this.serverAddress + '/api/user/getUserInfo', {params: param});
   }
 
-  getUserSets(): Observable<SetDTO> {
+  updateUserInfo(newName: string, newSurname: string): Observable<number> {
+    let userName = sessionStorage.getItem('username');
+    let param = new HttpParams().set("userName",userName).set("newName",newName).set("newSurname",newSurname);
+    return this.http.put<number>(this.serverAddress + '/api/user/updateUserInfo', {},{params: param})
+  }
+
+  getUserSets(): Observable<Array<SetDTO>> {
     let userName = sessionStorage.getItem('username');
     let param = new HttpParams().set("username",userName);
-    return this.http.get<SetDTO>(this.serverAddress + '/api/set/getUserSets', {params: param});
+    return this.http.get<Array<SetDTO>>(this.serverAddress + '/api/set/getUserSets', {params: param});
   }
 
   deleteSet(id) {
@@ -70,5 +78,20 @@ export class HttpService {
   getWordsBySetId(id: string){
     let param = new HttpParams().set("setId",id);
     return this.http.get(this.serverAddress + '/api/word/getWordsBySetId?setId='+id, {params: param});
+  }
+
+  getDefaultSets(): Observable<DefaultSetDTO> {
+    return this.http.get<DefaultSetDTO>(this.serverAddress + '/api/defaultSet/getAllDefaultSets');
+  }
+
+  getDefaultWordsBySetId(id: string): Observable<Array<DefaultWordDTO>>{
+    let param = new HttpParams().set("setId",id);
+    return this.http.get<Array<DefaultWordDTO>>(this.serverAddress + '/api/defaultWord/getDefaultWordsBySetId?setId='+id, {params: param});
+  }
+
+  copyDefaultSet(defaultSetId: string){
+    let userName = sessionStorage.getItem('username');
+    let param = new HttpParams().set("userName",userName).set("defaultSetId",defaultSetId);
+    return this.http.get(this.serverAddress + '/api/defaultSet/copyDefaultSet', {params: param});
   }
 }

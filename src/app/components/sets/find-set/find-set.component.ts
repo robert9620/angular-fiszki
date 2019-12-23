@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttpService} from '../../../services/http/http.service';
 
 @Component({
   selector: 'app-find-set',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FindSetComponent implements OnInit {
 
-  constructor() { }
+  private defaultSets;
+
+  constructor(private httpService: HttpService) { }
 
   ngOnInit() {
+    this.getDefaultSets();
+  }
+
+  private getDefaultSets(){
+    this.httpService.getDefaultSets().subscribe(
+      (response) => {
+        this.defaultSets = response;
+        this.defaultSets.sort();
+      }
+    )
+  }
+
+  private addToSets(defaultSetId, plusIcon, tile) {
+    this.httpService.copyDefaultSet(defaultSetId).subscribe();
+    plusIcon.style.display = "none";
+    tile.style.borderColor = "green";
   }
 
 }

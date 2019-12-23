@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 export class EditSetComponent implements OnInit {
   private setId;
   private setName;
+  private setIsFavourite;
   private words;
 
   constructor(private httpService: HttpService,
@@ -19,7 +20,7 @@ export class EditSetComponent implements OnInit {
   ngOnInit() {
     this.setId = sessionStorage.getItem('currentEditingSetId');
     this.setName = sessionStorage.getItem('currentEditingSetName');
-
+    this.setIsFavourite = sessionStorage.getItem('currentEditingSetIsFavourite');
     this.httpService.getWordsBySetId(this.setId).subscribe(
       (response) => {
         this.words = response;
@@ -38,6 +39,7 @@ export class EditSetComponent implements OnInit {
   save() {
     sessionStorage.removeItem('currentEditingSetId');
     sessionStorage.removeItem('currentEditingSetName');
+    sessionStorage.removeItem('currentEditingSetIsFavourite');
     this.deleteEditedSet();
     this.createNewSet();
   }
@@ -51,7 +53,13 @@ export class EditSetComponent implements OnInit {
       (response) => {
         this.words.forEach(function(word){
           word.setId = response.id;
-        })
+        });
+
+        console.log(this.setIsFavourite);
+        if( this.setIsFavourite === "true") {
+          console.log('set as favourite');
+          this.httpService.addSetToFavourite(response.id).subscribe();
+        }
 
         this.httpService.createWords(this.words).subscribe(
           () => this.router.navigate(['/zestawy'])
