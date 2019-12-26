@@ -2,13 +2,21 @@
   <h2>Login:</h2>
   <h5>{{userName}}</h5>
 </div>
-<h3>Imię:</h3>
-<input type="text" placeholder="{{name}}" id="name" #nameInput>
-<h3>Nazwisko:</h3>
-<input type="text" placeholder="{{surname}}" id="surname" #surnameInput>
-<button class="btnOrange" id="save" (click)="saveChanges(nameInput.value, surnameInput.value)">
-  <i class="fas fa-save"></i>
-</button>
+<form (ngSubmit)="saveChanges(nameInput.value, surnameInput.value, formData)" #formData="ngForm">
+  <h3>Imię:</h3>
+  <input
+    [class.borderRed]="!nameInput.valid && nameInput.dirty"
+    [class.borderGreen]="nameInput.valid && nameInput.dirty"
+    value="" type="text" placeholder="{{name}}" required id="name" #nameInput="ngModel" name="nameInput" [(ngModel)]="formDataClass.name">
+  <h3>Nazwisko:</h3>
+  <input
+    [class.borderRed]="!surnameInput.valid && surnameInput.dirty"
+    [class.borderGreen]="surnameInput.valid && surnameInput.dirty"
+    value="" type="text" placeholder="{{surname}}" required id="surname" #surnameInput="ngModel" name="surnameInput" [(ngModel)]="formDataClass.surname">
+  <button class="btnOrange" id="save" type="submit" [disabled]="!formData.valid">
+    <i class="fas fa-save"></i>
+  </button>
+</form>
 <br>
 <p class="messageGreen">{{message}}</p>
 <p class="messageRed">{{messageError}}</p>

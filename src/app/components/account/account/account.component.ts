@@ -11,6 +11,8 @@ export class AccountComponent implements OnInit {
   private name: string;
   private surname: string;
 
+  private formDataClass: FormDataClass = new FormDataClass();
+
   private message: string = "";
   private messageError: string = "";
 
@@ -30,7 +32,7 @@ export class AccountComponent implements OnInit {
     )
   }
 
-  saveChanges(newName: string, newSurname: string){
+  saveChanges(newName: string, newSurname: string, formData){
     this.httpService.updateUserInfo(newName, newSurname).subscribe(
       (response) => {
         if(response === 1){
@@ -41,5 +43,18 @@ export class AccountComponent implements OnInit {
         this.messageError = "Nie udało się zmienić danych";
       }
     );
+  }
+}
+
+class FormDataClass {
+  constructor(
+    public name?,
+    public surname?
+  ) {
+  }
+
+  clear(){
+    this.name = '';
+    this.surname = '';
   }
 }

@@ -39,6 +39,12 @@ export class HttpService {
     return this.http.put<number>(this.serverAddress + '/api/user/updateUserInfo', {},{params: param})
   }
 
+  changePassword(password: string, newPassword: string): Observable<JSON> {
+    let userName = sessionStorage.getItem('username');
+    let param = new HttpParams().set("userName",userName).set("password",password).set("newPassword",newPassword);
+    return this.http.put<JSON>(this.serverAddress + '/auth/changePassword', {}, {params: param});
+  }
+
   getUserSets(): Observable<Array<SetDTO>> {
     let userName = sessionStorage.getItem('username');
     let param = new HttpParams().set("username",userName);
