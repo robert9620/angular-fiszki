@@ -16,6 +16,7 @@ import {FindSetComponent} from '../../components/sets/find-set/find-set.componen
 import {SetsMenuComponent} from '../../components/sets/sets-menu.component';
 import {AccountMenuComponent} from '../../components/account/account-menu.component';
 import {ChangePasswordComponent} from '../../components/account/change-password/change-password.component';
+import {LearnComponent} from '../../components/lets-learn/learn/learn.component';
 
 
 const routes: Routes = [
@@ -46,8 +47,13 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
-    path: 'nauka',
+    path: 'pouczymy-sie',
     component: LetsLearnComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'pouczymy-sie/nauka',
+    component: LearnComponent,
     canActivate: [AuthGuardService]
   },
   {

@@ -7,9 +7,9 @@
           <owl-carousel-o [options]="owlCarouselOptions" #owlCarousel>
             <ng-container *ngFor="let slide of slidesStore">
               <ng-template carouselSlide>
-                <div (click)="setActiveSet(slideName.innerText)" class="setTile">
+                <div (click)="setActiveSet(slideName.innerText, slide.id)" class="setTile">
                   <h2 #slideName>{{slide.name}}</h2>
-                  <h5>Słówek: {{slide.amount}}</h5>
+                  <h5>Słówek: {{slide.wordsAmount}}</h5>
                 </div>
               </ng-template>
             </ng-container>
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="col-md-6 order-md-3">
-        <a href="#">
+        <a (click)="goToLearnPage()">
           <div class="tile continueTile">
             <h3>Ucz się zestawu:</h3>
             <h2 class="setTitle">"<span id="chosenSet">{{activeSet}}</span>"</h2>
@@ -31,15 +31,15 @@
       <div class="col-md-6">
         <div class="tile options">
           <div class="firstOption">
-            <input type="checkbox" class="switch">
+            <input type="checkbox" class="switch" [checked]="setting.changedOrder" (click)="updateChangedFont(changedOrderInput.checked)" #changedOrderInput>
             Obrócona kolejność<br> (język obcy - język polski)
           </div>
           <div class="secondOption">
-            <input type="checkbox" class="switch">
+            <input type="checkbox" class="switch" [checked]="setting.counter" (click)="updateCounter(counterInput.checked)" #counterInput>
             Licznik punktów
           </div>
           <div class="thirdOption">
-            <input type="checkbox" class="switch">
+            <input type="checkbox" class="switch" [checked]="setting.styledFont" (click)="updateStyledFont(styledFontInput.checked)" #styledFontInput>
             Stylizowana czcionka
           </div>
         </div>

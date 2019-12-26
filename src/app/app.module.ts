@@ -28,6 +28,7 @@ import { EditSetComponent } from './components/sets/edit-set/edit-set.component'
 import { SetsMenuComponent } from './components/sets/sets-menu.component';
 import { AccountMenuComponent } from './components/account/account-menu.component';
 import { ChangePasswordComponent } from './components/account/change-password/change-password.component';
+import { LearnComponent } from './components/lets-learn/learn/learn.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ChangePasswordComponent } from './components/account/change-password/ch
     EditSetComponent,
     SetsMenuComponent,
     AccountMenuComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    LearnComponent
   ],
   imports: [
     BrowserModule,

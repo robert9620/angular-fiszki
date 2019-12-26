@@ -13,7 +13,7 @@
     [class.borderRed]="!surnameInput.valid && surnameInput.dirty"
     [class.borderGreen]="surnameInput.valid && surnameInput.dirty"
     value="" type="text" placeholder="{{surname}}" required id="surname" #surnameInput="ngModel" name="surnameInput" [(ngModel)]="formDataClass.surname">
-  <button class="btnOrange" id="save" type="submit" [disabled]="!formData.valid">
+  <button class="btnOrange" id="save" type="submit" [disabled]="!formData.valid" title="Zapisz zmiany">
     <i class="fas fa-save"></i>
   </button>
 </form>

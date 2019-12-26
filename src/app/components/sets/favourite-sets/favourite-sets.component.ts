@@ -27,6 +27,11 @@ export class FavouriteSetsComponent implements OnInit {
     )
   }
 
+  private goLearn(setId) {
+    sessionStorage.setItem('currentLearningSetId', setId);
+    this.router.navigate(['pouczymy-sie/nauka']);
+  }
+
   private editSet(setId, setName, isFavourite) {
     sessionStorage.setItem('currentEditingSetId', setId);
     sessionStorage.setItem('currentEditingSetName', setName);

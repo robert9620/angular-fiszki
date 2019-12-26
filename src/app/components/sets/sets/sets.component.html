@@ -6,7 +6,7 @@
         <p>Słówek: {{set.wordsAmount}}</p>
       </div>
       <div class="setIcons">
-        <i class="fas fa-graduation-cap" title="Ucz się"></i><br>
+        <i class="fas fa-graduation-cap" title="Ucz się" (click)="goLearn(oneSet.id)"></i><br>
 
         <ng-container [ngTemplateOutlet]='set.favourite ? favourite : notFavourite'></ng-container>
         <ng-template #favourite>

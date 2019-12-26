@@ -6,6 +6,7 @@ import {SetDTO} from '../../models/SetDTO';
 import {Word} from '../../models/Word';
 import {DefaultSetDTO} from '../../models/DefaultSetDTO';
 import {DefaultWordDTO} from '../../models/DefaultWordDTO';
+import {SettingDTO} from '../../models/SettingDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +37,19 @@ export class HttpService {
   updateUserInfo(newName: string, newSurname: string): Observable<number> {
     let userName = sessionStorage.getItem('username');
     let param = new HttpParams().set("userName",userName).set("newName",newName).set("newSurname",newSurname);
-    return this.http.put<number>(this.serverAddress + '/api/user/updateUserInfo', {},{params: param})
+    return this.http.put<number>(this.serverAddress + '/api/user/updateUserInfo', {},{params: param});
+  }
+
+  addUserPoint(): Observable<number> {
+    let userName = sessionStorage.getItem('username');
+    let param = new HttpParams().set("userName",userName);
+    return this.http.put<number>(this.serverAddress + '/api/user/addPoint',{}, {params: param});
+  }
+
+  addUserMiastake(): Observable<number> {
+    let userName = sessionStorage.getItem('username');
+    let param = new HttpParams().set("userName",userName);
+    return this.http.put<number>(this.serverAddress + '/api/user/addMistake',{}, {params: param});
   }
 
   changePassword(password: string, newPassword: string): Observable<JSON> {
@@ -81,9 +94,9 @@ export class HttpService {
     return this.http.post<Array<Word>>(this.serverAddress + '/api/word/createWords', words);
   }
 
-  getWordsBySetId(id: string){
+  getWordsBySetId(id: string): Observable<Array<Word>>{
     let param = new HttpParams().set("setId",id);
-    return this.http.get(this.serverAddress + '/api/word/getWordsBySetId?setId='+id, {params: param});
+    return this.http.get<Array<Word>>(this.serverAddress + '/api/word/getWordsBySetId?setId='+id, {params: param});
   }
 
   getDefaultSets(): Observable<DefaultSetDTO> {
@@ -99,5 +112,29 @@ export class HttpService {
     let userName = sessionStorage.getItem('username');
     let param = new HttpParams().set("userName",userName).set("defaultSetId",defaultSetId);
     return this.http.get(this.serverAddress + '/api/defaultSet/copyDefaultSet', {params: param});
+  }
+
+  getUserSetting(): Observable<SettingDTO>{
+    let userName = sessionStorage.getItem('username');
+    let param = new HttpParams().set("userName",userName);
+    return this.http.get<SettingDTO>(this.serverAddress + '/api/setting/getUserSetting', {params: param});
+  }
+
+  setUserSettingChangedOrder(setting: string): Observable<number>{
+    let userName = sessionStorage.getItem('username');
+    let param = new HttpParams().set("userName",userName).set("setting",setting);
+    return this.http.put<number>(this.serverAddress + '/api/setting/setChangedOrder', {},{params: param});
+  }
+
+  setUserSettingCounter(setting: string): Observable<number>{
+    let userName = sessionStorage.getItem('username');
+    let param = new HttpParams().set("userName",userName).set("setting",setting);
+    return this.http.put<number>(this.serverAddress + '/api/setting/setCounter', {},{params: param});
+  }
+
+  setUserSettingStyledFont(setting: string): Observable<number>{
+    let userName = sessionStorage.getItem('username');
+    let param = new HttpParams().set("userName",userName).set("setting",setting);
+    return this.http.put<number>(this.serverAddress + '/api/setting/setStyledFont', {},{params: param});
   }
 }
