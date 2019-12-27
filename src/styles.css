@@ -202,7 +202,7 @@ input[type="checkbox"].switch:checked:after{
   height: 40px;
   width: auto;
 }
-#menu #menuItems > li{
+#menu #menuItems li{
   background: var(--bg);
   border-radius: var(--radius-small);
   padding: 4px 12px;
@@ -211,21 +211,28 @@ input[type="checkbox"].switch:checked:after{
   cursor: pointer;
   box-shadow: var(--shadow);
 }
-#menu #menuItems > li > a{
-  color: var(--color);
+#menu #menuItems > a{
+  text-decoration: none;
 }
-#menu #menuItems > li.active{
+#menu #menuItems > a:hover{
+  text-decoration: none;
+}
+#menu #menuItems > a > li {
+  color: var(--color);
+  text-decoration: none;
+}
+#menu #menuItems li.active{
   background: var(--alt-bg-darker);
   box-shadow: var(--shadow-inset);
 }
-#menu #menuItems > li.active > a{
+#menu #menuItems > a > li.active {
   color: #fff;
 }
-#menu #menuItems > li:hover{
+#menu #menuItems li:hover{
   background: var(--alt-bg-darker);
   box-shadow: var(--shadow-inset);
 }
-#menu #menuItems > li:hover > a{
+#menu #menuItems > a > li:hover {
   color: #fff;
   text-decoration: none;
 }
