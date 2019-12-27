@@ -76,6 +76,8 @@
 }
 #learn .fiche > div h2{
   font-size: 64px;
+  text-align: center;
+  padding: 0px 40px;
 }
 #learn .ficheFront{
   background-color: #fff;
@@ -116,4 +118,49 @@
 }
 #learn .owl-carousel .owl-nav.disabled{
   display: none;
+}
+/* MOBILE //////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Telefon */
+@media all and (max-width:767px) {
+  .responsiveFlex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+  #learn .pointsTile{
+    width: 80%;
+    text-align: center;
+  }
+  #learn .returnTileA{
+    width:80%;
+  }
+  .responsiveCarousel {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .row{
+    margin: 0px;
+  }
+  #learn .fiche > div h2{
+    font-size: 38px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Tablet */
+@media all and (max-width:991px) and (min-width:768px){
+  #learn .fiche > div h2{
+    font-size: 46px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Mały monitor */
+@media all and (max-width:1199px) and (min-width:992px){
+
 }

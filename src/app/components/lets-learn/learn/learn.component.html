@@ -2,57 +2,63 @@
 <main id="learn">
   <div class="container learnContainer">
     <div class="row">
-      <div class="col-2">
-        <div class="tile pointsTile" [style.display]="this.settings.counter ? 'block' : 'none'">
-          <div class="divPoints">
-            <h3>Punkty: <span class="points">{{points}}</span></h3>
-          </div>
-          <div class="divMistakes">
-            <h3>Pomyłki: <span class="mistakes">{{mistakes}}</span></h3>
-          </div>
-        </div>
-        <a (click)="goToHomePage()">
-          <div class="tile returnTile">
-            <i class="fas fa-home"></i>
-          </div>
-        </a>
-      </div>
-      <div class="col-10">
-        <owl-carousel-o [options]="owlCarouselOptions" #owlCarousel>
-          <ng-container *ngFor="let fiche of fichesStore; let i = index">
-            <ng-template carouselSlide>
-              <div class="owl-padding">
-                <div class="scene" [className]="this.settings.styledFont ? 'scene styledFont':'scene noStyledFont'">
-                  <div class="fiche" (click)="toggleClass(i)" [ngClass]="{'flipped': !fiche.flipped}">
-                    <div class="ficheFront">
-                      <h2>{{fiche.definition}}</h2>
-                    </div>
-                    <div class="ficheBack">
-                      <h2>{{fiche.word}}</h2>
+
+      <div class="col-md-8 col-lg-10 order-md-2">
+        <div class="responsiveCarousel">
+          <owl-carousel-o [options]="owlCarouselOptions" #owlCarousel>
+            <ng-container *ngFor="let fiche of fichesStore; let i = index">
+              <ng-template carouselSlide>
+                <div class="owl-padding">
+                  <div class="scene" [className]="this.settings.styledFont ? 'scene styledFont':'scene noStyledFont'">
+                    <div class="fiche" (click)="toggleClass(i)" [ngClass]="{'flipped': !fiche.flipped}">
+                      <div class="ficheFront">
+                        <h2>{{fiche.definition}}</h2>
+                      </div>
+                      <div class="ficheBack">
+                        <h2>{{fiche.word}}</h2>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </ng-template>
-          </ng-container>
-        </owl-carousel-o>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
 
-        <div class="owl-nav" [style.display]="(!isEnd && settings.counter) ? 'flex' : 'none'">
-          <div class="thumbs-down owl-prev" title="nie umiem" (click)="mistake(owlCarousel)">
-            <i class="fas fa-thumbs-down"></i>
+          <div class="owl-nav" [style.display]="(!isEnd && settings.counter) ? 'flex' : 'none'">
+            <div class="thumbs-down owl-prev" title="nie umiem" (click)="mistake(owlCarousel)">
+              <i class="fas fa-thumbs-down"></i>
+            </div>
+            <div class="thumbs-up owl-next" title="umiem" (click)="point(owlCarousel)">
+              <i class="fas fa-thumbs-up"></i>
+            </div>
           </div>
-          <div class="thumbs-up owl-next" title="umiem" (click)="point(owlCarousel)">
-            <i class="fas fa-thumbs-up"></i>
+
+          <div class="owl-nav" [style.display]="(!isEnd && !settings.counter) ? 'flex' : 'none'">
+            <div class="next-arrow owl-next" title="Następne słówko" (click)="next(owlCarousel)">
+              <i class="fas fa-forward"></i>
+            </div>
           </div>
         </div>
-
-        <div class="owl-nav" [style.display]="(!isEnd && !settings.counter) ? 'flex' : 'none'">
-          <div class="next-arrow owl-next" title="Następne słówko" (click)="next(owlCarousel)">
-            <i class="fas fa-forward"></i>
-          </div>
-        </div>
-
       </div>
+
+      <div class="col-md-4 col-lg-2 order-md-1">
+        <div class="responsiveFlex">
+          <div class="tile pointsTile" [style.display]="this.settings.counter ? 'block' : 'none'">
+            <div class="divPoints">
+              <h3>Punkty: <span class="points">{{points}}</span></h3>
+            </div>
+            <div class="divMistakes">
+              <h3>Pomyłki: <span class="mistakes">{{mistakes}}</span></h3>
+            </div>
+          </div>
+          <a (click)="goToHomePage()" class="returnTileA">
+            <div class="tile returnTile">
+              <i class="fas fa-home"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </main>
