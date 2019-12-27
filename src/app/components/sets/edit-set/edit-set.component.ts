@@ -12,7 +12,7 @@ export class EditSetComponent implements OnInit {
   private setId;
   private setName;
   private setIsFavourite;
-  private words;
+  private words: Array<Word> = new Array<Word>();
   private errorMessage: string;
 
   constructor(private httpService: HttpService,
