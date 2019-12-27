@@ -6,7 +6,7 @@
         <div class="numberCircle">{{i+1}}</div>
       </td>
       <td class="word">
-        <input type="text" name="nameWord" placeholder="Słówko" [(ngModel)]="words[i].word">
+        <input type="text" name="wordWord" placeholder="Słówko" [(ngModel)]="words[i].word">
       </td>
       <td class="definition">
         <input type="text" placeholder="Definicja" [(ngModel)]="words[i].definition">
@@ -21,7 +21,8 @@
   <button class="btnOrange" id="addAnotherWord" (click)="addWord()" title="Dodaj kolejne słówko">
     <i class="fas fa-plus"></i>
   </button>
-  <button class="btnOrange" id="saveSet" (click)="saveWords()" title="Zapisz zestaw">
+  <button class="btnOrange" id="saveSet" type="submit" (click)="saveWords()" title="Zapisz zestaw" [disabled]="!setReady()">
     <i class="fas fa-save"></i>
   </button>
 </div>
+<p class="infoRed">{{errorMessage}}</p>

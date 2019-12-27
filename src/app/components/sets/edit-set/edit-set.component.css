@@ -55,6 +55,34 @@ input{
 #saveSet{
   font-size: 24px;
 }
+button[type=submit]{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+button[type=submit]:disabled{
+  background: #ddd;
+}
+button[type=submit]:hover{
+  background: var(--alt-bg-darker);
+  box-shadow: var(--shadow-inset);
+  color: #fff;
+}
+button[type=submit]:disabled:hover{
+  background: #ddd;
+  box-shadow: var(--shadow);
+  color: var(--color);
+  cursor: no-drop;
+}
+input.borderRed{
+  border: 1px solid red;
+}
+input.borderGreen{
+  border: 1px solid green;
+}
+.infoRed{
+  color:red;
+  text-align: center;
+}
 
 /* MOBILE //////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Telefon */

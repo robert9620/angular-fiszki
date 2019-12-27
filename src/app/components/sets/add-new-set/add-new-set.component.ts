@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 export class AddNewSetComponent implements OnInit {
   private words: Array<Word>;
   private setName: string;
+  private errorMessage: string;
 
   constructor(private httpService: HttpService,
               private router: Router) { }
@@ -29,6 +30,33 @@ export class AddNewSetComponent implements OnInit {
     this.words.splice(id, 1);
   }
 
+  setReady(): boolean{
+    let state: boolean = true;
+
+    if(this.setName === "") {
+      state = false;
+    }
+
+    this.words.forEach( function(word) {
+      if(word.word === "" || word.definition === "") {
+        state = false;
+      }
+    });
+
+    if(state){
+      this.errorMessage = '';
+    } else {
+      this.errorMessage = 'Wypełnij wszystkie pola';
+    }
+
+    if(this.words.length === 0){
+      state = false;
+      this.errorMessage = 'Dodaj conajmniej jedno słówko';
+    }
+
+    return state;
+  }
+
   saveWords() {
     this.httpService.createSet(this.setName).subscribe(
       (response) => {
@@ -41,7 +69,6 @@ export class AddNewSetComponent implements OnInit {
         );
       }
     );
-
   }
 
 }

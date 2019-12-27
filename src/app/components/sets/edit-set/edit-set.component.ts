@@ -13,6 +13,7 @@ export class EditSetComponent implements OnInit {
   private setName;
   private setIsFavourite;
   private words;
+  private errorMessage: string;
 
   constructor(private httpService: HttpService,
               private router: Router) { }
@@ -34,6 +35,33 @@ export class EditSetComponent implements OnInit {
 
   deleteWord(id) {
     this.words.splice(id, 1);
+  }
+
+  setReady(): boolean{
+    let state: boolean = true;
+
+    if(this.setName === "") {
+      state = false;
+    }
+
+    this.words.forEach( function(word) {
+      if(word.word === "" || word.definition === "") {
+        state = false;
+      }
+    });
+
+    if(state){
+      this.errorMessage = '';
+    } else {
+      this.errorMessage = 'Wypełnij wszystkie pola';
+    }
+
+    if(this.words.length === 0){
+      state = false;
+      this.errorMessage = 'Dodaj conajmniej jedno słówko';
+    }
+
+    return state;
   }
 
   save() {

@@ -21,7 +21,8 @@
   <button class="btnOrange" id="addAnotherWord" (click)="addWord()" title="Dodaj kolejne słówko">
     <i class="fas fa-plus"></i>
   </button>
-  <button class="btnOrange" id="saveSet" (click)="save()" title="Zapisz zestaw">
+  <button class="btnOrange" id="saveSet" (click)="save()" type="submit" title="Zapisz zestaw" [disabled]="!setReady()">
     <i class="fas fa-save"></i>
   </button>
 </div>
+<p class="infoRed">{{errorMessage}}</p>
